@@ -1,0 +1,133 @@
+/* UdyamSetu AI Dashboard & Analytics Styles */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--gov-blue);
+}
+
+.kpi-card.kpi-warning::before { background: var(--warning-amber); }
+.kpi-card.kpi-danger::before { background: var(--danger-red); }
+.kpi-card.kpi-success::before { background: var(--success-green); }
+
+.kpi-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--slate-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1;
+}
+
+.kpi-subtext {
+    font-size: 0.75rem;
+    color: var(--slate-muted);
+    margin-top: 0.5rem;
+}
+
+/* Compliance Risk Gauge & Health Score */
+.health-score-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #0A192F 0%, #1E3A8A 100%);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+}
+
+.score-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid var(--success-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.score-num {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8;
+}
+
+/* Approval Roadmap */
+.roadmap-timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 10px;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.roadmap-step {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.roadmap-step::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid var(--gov-blue);
+}
+
+.roadmap-step.completed::before {
+    background: var(--success-green);
+    border-color: var(--success-green);
+}
+
+/* Layout Grid for Dashboard Widgets */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}

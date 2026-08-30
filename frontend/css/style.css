@@ -1,0 +1,114 @@
+/* UdyamSetu AI Core Design System & Global Stylesheet */
+:root {
+    --primary-navy: #0A192F;
+    --navy-light: #112240;
+    --gov-blue: #1D4ED8;
+    --gov-blue-hover: #1E40AF;
+    --blue-subtle: #EFF6FF;
+    --slate-dark: #1E293B;
+    --slate-body: #334155;
+    --slate-muted: #64748B;
+    --border-color: #E2E8F0;
+    --bg-light: #F8FAFC;
+    --card-bg: #FFFFFF;
+    
+    /* Functional Status Colors */
+    --success-green: #059669;
+    --success-bg: #ECFDF5;
+    --warning-amber: #D97706;
+    --warning-bg: #FFFBEB;
+    --danger-red: #DC2626;
+    --danger-bg: #FEF2F2;
+    --info-blue: #2563EB;
+    --info-bg: #EFF6FF;
+
+    /* Design Tokens */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition-fast: all 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-light);
+    color: var(--slate-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--gov-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* App Main Layout Structure */
+#app-root {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.page-container {
+    padding: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* Typography Standards */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-navy);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; }
+
+.page-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header-title h1 {
+    font-size: 1.75rem;
+}
+
+.page-header-title p {
+    color: var(--slate-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
