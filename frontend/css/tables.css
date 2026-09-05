@@ -1,79 +1,17 @@
-/* UdyamSetu AI Data Tables Styles */
-
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    background: #ffffff;
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.875rem;
-    text-align: left;
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-.table th {
-    background: #F8FAFC;
-    padding: 0.75rem 1rem;
-    font-weight: 700;
-    color: var(--slate-dark);
-    border-bottom: 1px solid var(--border-color);
-    white-space: nowrap;
-}
-
-.table td {
-    padding: 0.85rem 1rem;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: middle;
-}
-
-.table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.table tbody tr:hover {
-    background-color: #F1F5F9;
-}
-
-.table-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.85rem 1rem;
-    border-top: 1px solid var(--border-color);
-    background: #ffffff;
-    font-size: 0.85rem;
-}
-
-.pagination-buttons {
-    display: flex;
-    gap: 0.35rem;
-}
-
-.page-btn {
-    padding: 0.3rem 0.65rem;
-    border: 1px solid var(--border-color);
-    background: #ffffff;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-.page-btn.active {
-    background: var(--gov-blue);
-    color: #ffffff;
-    border-color: var(--gov-blue);
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
 }

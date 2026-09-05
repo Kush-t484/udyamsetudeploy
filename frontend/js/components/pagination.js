@@ -1,21 +1,12 @@
-/* Pagination Generator Component */
+// Pagination Component
 
 const Pagination = {
-    render(currentPage, totalPages, onPageChange) {
-        if (totalPages <= 1) return '';
-
-        let btns = '';
-        for (let i = 1; i <= totalPages; i++) {
-            btns += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="${onPageChange}(${i})">${i}</button>`;
-        }
-
-        return `
-            <div class="pagination">
-                <span>Page ${currentPage} of ${totalPages}</span>
-                <div class="pagination-buttons">${btns}</div>
-            </div>
-        `;
+  render(currentPage, totalPages) {
+    let html = '<div class="pagination">';
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}">${i}</button>`;
     }
+    html += '</div>';
+    return html;
+  }
 };
-
-window.Pagination = Pagination;
