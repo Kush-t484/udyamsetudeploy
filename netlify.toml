@@ -1,11 +1,2 @@
 [build]
-  command = "echo 'No build needed for static site'"
   publish = "frontend"
-
-[build.environment]
-  NODE_VERSION = "18"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
