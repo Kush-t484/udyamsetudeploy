@@ -1,15 +1,20 @@
 // Charts Component
 
 const Charts = {
-  renderBarChart(data) {
+  createBar(title, labels, data) {
     return `
-      <div class="bar-chart">
-        ${data.map(item => `
-          <div class="bar-item">
-            <div class="bar" style="height: ${item.value}%"></div>
-            <label>${item.label}</label>
-          </div>
-        `).join('')}
+      <div class="chart-container">
+        <h3>${title}</h3>
+        <p>Chart rendering coming soon</p>
+      </div>
+    `;
+  },
+  
+  createPie(title, labels, data) {
+    return `
+      <div class="chart-container">
+        <h3>${title}</h3>
+        <p>Chart rendering coming soon</p>
       </div>
     `;
   }
