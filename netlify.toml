@@ -1,14 +1,9 @@
 [build]
-  command = "npm install && npm run build"
-  publish = "frontend/dist"
+  command = "echo 'No build needed for static site'"
+  publish = "frontend"
 
 [build.environment]
   NODE_VERSION = "18"
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
 
 [[redirects]]
   from = "/*"
