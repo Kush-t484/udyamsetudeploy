@@ -1,7 +1,8 @@
 /* Centralized API Communication Client */
 
 const API = {
-    BASE_URL: '/api',
+    // Allow overriding BASE_URL from hosting environment (set window.API_BASE_URL before loading scripts)
+    BASE_URL: (typeof window !== 'undefined' && window.API_BASE_URL) ? window.API_BASE_URL : '/api',
 
     getToken() {
         return localStorage.getItem('udyamsetu_token');
@@ -37,23 +38,27 @@ const API = {
 
         try {
             const response = await fetch(url, config);
-            
             const text = await response.text();
-            
+
             let data;
             try {
                 data = text ? JSON.parse(text) : {};
             } catch (error) {
-                console.error("Server returned:", text);
+                // Non-JSON response (or empty). Log raw text for debugging and continue with empty object
+                console.error("Server returned non-JSON response:", text);
                 data = {};
             }
 
             if (!response.ok) {
+                // Handle unauthorized centrally
                 if (response.status === 401 && !endpoint.includes('/auth/login')) {
                     this.setToken(null);
                     window.location.hash = '#/login';
                 }
-                throw new Error(data.message || 'API request failed');
+
+                // Throw an error that includes HTTP status and raw response text when available
+                const message = text ? `${response.status} ${text}` : (data && data.message) ? `${response.status} ${data.message}` : `${response.status} ${response.statusText}`;
+                throw new Error(`API Error: ${message}`);
             }
 
             return data;
