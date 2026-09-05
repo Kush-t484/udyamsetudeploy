@@ -1,21 +1,20 @@
 // Timeline Component
 
 const Timeline = {
-  render(events) {
-    let html = '<div class="timeline">';
-    events.forEach(event => {
-      html += `
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>${event.title}</h4>
-            <p>${event.description}</p>
-            <small>${Utils.formatDate(event.date)}</small>
+  create(events) {
+    return `
+      <div class="timeline">
+        ${events.map((event, index) => `
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>${event.title}</h4>
+              <p>${event.description}</p>
+              <small>${Utils.formatDateTime(event.date)}</small>
+            </div>
           </div>
-        </div>
-      `;
-    });
-    html += '</div>';
-    return html;
+        `).join('')}
+      </div>
+    `;
   }
 };
