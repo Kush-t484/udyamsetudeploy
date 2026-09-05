@@ -37,7 +37,16 @@ const API = {
 
         try {
             const response = await fetch(url, config);
-            const data = await response.json();
+            
+            const text = await response.text();
+            
+            let data;
+            try {
+                data = text ? JSON.parse(text) : {};
+            } catch (error) {
+                console.error("Server returned:", text);
+                data = {};
+            }
 
             if (!response.ok) {
                 if (response.status === 401 && !endpoint.includes('/auth/login')) {
